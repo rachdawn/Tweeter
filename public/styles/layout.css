@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,8 +20,66 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans 3", sans-serif;
 }
 
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #f4f1ec;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ 
+article {
+  border: solid 3px;
+  padding: 0.5em;
+  margin: 2em;
+  
+}
+
+article:hover {
+    box-shadow: 4px 6px rgba(162, 176, 219, 0.958);
+}
+
+#tweet {
+    border-bottom: solid 3px;
+    margin: 0 auto;
+}
+
+article footer i {
+    color: #4056A1;
+}
+
+article header {
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-end;
+  margin-top: 0;
+}
+
+article header div {
+    display: flex;
+    align-items: baseline;
+
+}
+
+article footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.65em;
+
+}
+
+.fa-solid.fa-flag:hover,
+.fa-solid.fa-retweet:hover,
+.fa-solid.fa-heart:hover {
+    color: red;
+}
+
+
+

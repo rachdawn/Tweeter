@@ -1,0 +1,40 @@
+nav {
+    display: flex;
+    height: 120px;
+    background-color: #4056A1;
+    color: #ffffff;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+#logo {
+    display: flex;
+    font-family: 'Bungee', sans-serif;
+    align-items: flex-end;
+    font-size: 1.75em;
+    padding: 8px;
+}
+
+.nav-write {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-write p {
+    margin: 0 auto;
+}
+
+.nav-write i {
+    color: red;
+    padding-bottom: 8px;
+
+}
+
+.bold {
+    font-weight: bold;
+}
