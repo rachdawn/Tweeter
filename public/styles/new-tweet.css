@@ -9,13 +9,18 @@
     justify-content: space-between;
 }
 
+.new-tweet footer {
+    display: flex;
+    justify-content: space-between;
+}
+
 .new-tweet h2 {
     color: transparent;
     margin: 0;
 }
 
 .new-tweet button {
-    background-color: #4056A1;
+    background-color: rgb(72, 12, 104);;
     font-family: 'Bungee', sans-serif;
     color: #ffffff;
     padding: 5px;

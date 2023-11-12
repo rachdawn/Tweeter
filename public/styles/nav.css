@@ -1,7 +1,7 @@
 nav {
     display: flex;
     height: 120px;
-    background-color: #4056A1;
+    background-color: rgb(72, 12, 104);
     color: #ffffff;
     padding-left: 1.5em;
     padding-right: 1.5em;
@@ -30,7 +30,7 @@ nav {
 }
 
 .nav-write i {
-    color: red;
+    color: rgb(211, 180, 226);
     padding-bottom: 8px;
 
 }

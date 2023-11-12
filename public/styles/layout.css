@@ -45,7 +45,7 @@ article:hover {
     box-shadow: 4px 6px rgba(162, 176, 219, 0.958);
 }
 
-#tweet {
+#tweet-input {
     border-bottom: solid 3px;
     margin: 0 auto;
 }
@@ -72,7 +72,6 @@ article footer {
   justify-content: space-between;
   align-items: baseline;
   font-size: 0.65em;
-
 }
 
 .fa-solid.fa-flag:hover,
