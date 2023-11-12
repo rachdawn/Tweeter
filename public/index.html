@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      type="text/css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        type="text/css" />
 
     <!-- External Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap"
+        rel="stylesheet" />
+
+    <!-- CDN libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+        integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -35,77 +33,46 @@
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script
-      type="text/javascript"
-      src="/scripts/composer-char-counter.js"
-    ></script>
-  </head>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
 
-  <body>
+<body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <div id="logo">tweeter</div>
-      <div class="nav-write">
-        <p><span class="bold">Write</span> a new tweet</p>
-        <i class="fa-solid fa-angles-down"></i>
-      </div>
+        <div id="logo">tweeter</div>
+        <div class="nav-write">
+            <p><span class="bold">Write</span> a new tweet</p>
+            <i class="fa-solid fa-angles-down"></i>
+        </div>
     </nav>
-
+    <!-- Profile header -->
     <header id="profile-header">
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div>
-        <h2>Your Name</h2>
-      </div>
+        <div>
+            <img src="/images/profile-hex.png" />
+        </div>
+        <br />
+        <div>
+            <h2>Your Name</h2>
+        </div>
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
-          <label for="tweet-text" class="bold"
-            >What are you humming about?</label
-          >
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output
-              name="counter"
-              class="counter bold"
-              id="character-count"
-              for="tweet-text"
-              >140</output
-            >
-          </div>
-        </form>
-      </section>
-      <section>
-        <article>
-          <header>
-            <p>
-              <i class="fa-solid fa-skull"></i>
-              name
-            </p>
-            <p>@name</p>
-          </header>
-          <p id="tweet">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In tenetur
-            provident dolore aperiam corporis voluptas.
-          </p>
-          <footer>
-            <p>10 days ago</p>
-            <div>
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
-      </section>
+        <section class="new-tweet">
+            <h2>Compose Tweet</h2>
+            <form id="tweet-form" method="POST" action="/tweets">
+                <label for="tweet-text"></label>
+                <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+                <footer>
+                    <button type="submit">Tweet</button>
+                    <output name="counter" class="counter bold" id="character-count" for="tweet-text">140</output>
+                </footer>
+            </form>
+        </section>
+        <!-- Tweets container -->
+        <section id="tweets-container"></section>
     </main>
-  </body>
+</body>
 </html>
