@@ -5,6 +5,12 @@
  */
 
 $(document).ready(function() {
+    //escape function
+    const escape = function (str) {
+        let div = document.createElement("div");
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      };
     //Fake data taken from initial-tweets.json
     // const data = [
     //     {
@@ -43,16 +49,16 @@ $(document).ready(function() {
     <article>
         <header>
             <span>
-                <img src="${tweet.user.avatars}" alt="avatar">
-                <p>${tweet.user.name}</p>
+                <img src="${escape(tweet.user.avatars)}" alt="avatar">
+                <p>${escape(tweet.user.name)}</p>
             </span>
-            <p>${tweet.user.handle}</p>
+            <p>${escape(tweet.user.handle)}</p>
         </header>
         <p id="tweet-input">
-            ${tweet.content.text}
+            ${escape(tweet.content.text)}
         </p>
         <footer>
-            <p>${timeago.format(new Date(tweet.created_at))}</p>
+            <p>${escape(timeago.format(new Date(tweet.created_at)))}</p>
             <div>
                 <i class="fa-solid fa-flag"></i>
                 <i class="fa-solid fa-retweet"></i>
@@ -94,8 +100,10 @@ $(document).ready(function() {
             url: "/tweets",
             data: serializedData,
         })
-            .then(function() {
+            .then(response => {
+                $("#tweet-text").val("");
                 loadTweets();
+                console.log("response:", response);
             })
             .catch((error) => {
                 console.log("error:", error);
