@@ -19,11 +19,13 @@
     font-family: 'Bungee', sans-serif;
     color: #ffffff;
     padding: 5px;
+    cursor: pointer;
 }
 
 .new-tweet textarea {
     background-color: transparent;
     margin: 2em 0;
+    padding-top: 5em;
     border: none;
     border-bottom: solid 3px;
 }

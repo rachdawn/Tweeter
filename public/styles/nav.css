@@ -32,7 +32,16 @@ nav {
 .nav-write i {
     color: rgb(211, 180, 226);
     padding-bottom: 8px;
+}
 
+.nav-write button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.fa-solid.fa-angles-down:hover {
+    color: #ffffff;
 }
 
 .bold {

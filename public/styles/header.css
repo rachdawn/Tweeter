@@ -8,3 +8,11 @@
     background-color: rgb(211, 180, 226);
     background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
+
+@media only screen and (min-width: 1024px) {
+    #profile-header {
+        width: 50%;
+        height: 50%;
+        margin-top: 100px;
+      }
+}

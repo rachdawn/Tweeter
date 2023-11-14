@@ -38,17 +38,11 @@ body {
 @media only screen and (min-width: 1024px) {
   #responsive {
     display: flex;
-    padding: 200px 75px 75px 50px;
+    padding: 150px 75px 75px 50px;
     justify-content: space-between;
   }
   .container {
     width: 80%;
     margin: 1em;
-  }
-  #profile-header {
-    height: 40%;
-  }
-  .new-tweet section {
-    height: auto;
   }
 }
