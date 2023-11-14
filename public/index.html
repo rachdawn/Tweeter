@@ -4,6 +4,7 @@
 <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -29,6 +30,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -49,30 +51,35 @@
         </div>
     </nav>
     <!-- Profile header -->
-    <header id="profile-header">
-        <div>
-            <img src="/images/profile-hex.png" />
-        </div>
-        <br />
-        <div>
-            <h2>Your Name</h2>
-        </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-        <section class="new-tweet">
-            <h2>Compose Tweet</h2>
-            <form id="tweet-form" method="POST" action="/tweets">
-                <label for="tweet-text"></label>
-                <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-                <footer>
-                    <button type="submit">Tweet</button>
-                    <output name="counter" class="counter bold" id="character-count" for="tweet-text">140</output>
-                </footer>
-            </form>
-        </section>
-        <!-- Tweets container -->
-        <section id="tweets-container"></section>
-    </main>
+    <div id="responsive">
+        <header id="profile-header">
+            <div>
+                <img src="/images/profile-hex.png" />
+            </div>
+            <br />
+            <div>
+                <h2>Rachel Little</h2>
+            </div>
+        </header>
+        <!-- Page-specific (main) content here -->
+        <main class="container">
+            <section class="new-tweet">
+                <form id="tweet-form" method="POST" action="/tweets">
+                    <p class="form-error" id="form-empty">Error: Cannot submit an empty tweet. Don't be shy!</p>
+                    <p class="form-error" id="form-limit">Error: Your Tweet exceeds the 140 character limit. Say less.
+                    </p>
+                    <label for="tweet-text"></label>
+                    <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+                    <footer>
+                        <button type="submit">Tweet</button>
+                        <output name="counter" class="counter bold" id="character-count" for="tweet-text">140</output>
+                    </footer>
+                </form>
+            </section>
+            <!-- Tweets container -->
+            <section id="tweets-container"></section>
+        </main>
+    </div>
 </body>
+
 </html>

@@ -29,56 +29,26 @@ body {
   padding: 1em;
   background-color: #f4f1ec;
 }
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- 
-article {
-  border: solid 3px;
-  padding: 0.5em;
-  margin: 2em;
-  
-}
-
-article:hover {
-    box-shadow: 4px 6px rgba(162, 176, 219, 0.958);
-}
-
-#tweet-input {
-    border-bottom: solid 3px;
-    margin: 0 auto;
-}
-
-article footer i {
-    color: #4056A1;
-}
-
-article header {
-  display: flex;
-  justify-content: space-between;
-  align-items:flex-end;
-  margin-top: 0;
-}
-
-article header div {
+/* Tablet Styles */
+@media only screen and (min-width: 1024px) {
+  #responsive {
     display: flex;
-    align-items: baseline;
-
+    padding: 200px 75px 75px 50px;
+    justify-content: space-between;
+  }
+  .container {
+    width: 80%;
+    margin: 1em;
+  }
+  #profile-header {
+    height: 40%;
+  }
+  .new-tweet section {
+    height: auto;
+  }
 }
-
-article footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 0.65em;
-}
-
-.fa-solid.fa-flag:hover,
-.fa-solid.fa-retweet:hover,
-.fa-solid.fa-heart:hover {
-    color: red;
-}
-
-
-

@@ -77,17 +77,18 @@ $(document).ready(function() {
     $("#tweet-form").on("submit", function(event) {
         //prevent default form submission behaviour
         event.preventDefault();
+        $(".form-error").slideUp();
         //implement validation logic
         const tweetVal = $("#tweet-text").val();
         console.log(tweetVal);
         //reject empty tweet
         if (!tweetVal) {
-            alert("Error: Can't submit empty Tweet.");
+            $("#form-empty").slideDown();
             return;
         }
         //reject tweet over 140 characters
         if (tweetVal.length > 140) {
-            alert("Error: Your tweet exceeds the 140 character limit.");
+            $("#form-limit").slideDown();
             return;
         }
         //serialize tweet data
