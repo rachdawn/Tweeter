@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  const $characterCount = $("#character-count");
   //escape function
   const escape = function(str) {
     let div = document.createElement("div");
@@ -18,16 +19,16 @@ $(document).ready(function() {
     <article>
         <header>
             <span>
-                <img src="${escape(tweet.user.avatars)}" alt="avatar">
-                <p>${escape(tweet.user.name)}</p>
+                <img src="${(tweet.user.avatars)}" alt="avatar">
+                <p>${(tweet.user.name)}</p>
             </span>
-            <p>${escape(tweet.user.handle)}</p>
+            <p>${(tweet.user.handle)}</p>
         </header>
         <p id="tweet-input">
             ${escape(tweet.content.text)}
         </p>
         <footer>
-            <p>${escape(timeago.format(new Date(tweet.created_at)))}</p>
+            <p>${timeago.format(new Date(tweet.created_at))}</p>
             <div>
                 <i class="fa-solid fa-flag"></i>
                 <i class="fa-solid fa-retweet"></i>
@@ -43,6 +44,9 @@ $(document).ready(function() {
   $("#tweet-form").on("submit", function(event) {
     //prevent default form submission behaviour
     event.preventDefault();
+    //reset character count to 140 on submission
+    $characterCount.text('140');
+
     $(".form-error").slideUp();
     //implement validation logic
     const tweetVal = $("#tweet-text").val();
@@ -60,6 +64,7 @@ $(document).ready(function() {
     //serialize tweet data
     const serializedData = $(this).serialize();
     console.log("serialized tweet data:", serializedData);
+
 
     //ajax POST request
     $.ajax({
