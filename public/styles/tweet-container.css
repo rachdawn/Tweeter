@@ -21,7 +21,13 @@ article header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  padding-bottom: 1em;
   margin-top: 0;
+}
+
+article span {
+    display: flex;
+
 }
 
 article header div {
